@@ -1,24 +1,37 @@
+<!--
+Documentation about content of this file: https://developer.atlassian.com/server/framework/atlassian-sdk/atlassian-plugin-xml-element-reference/
+-->
 <atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
-    <plugin-info>
-        <description>${project.description}</description>
-        <version>${project.version}</version>
-        <vendor name="${project.organization.name}" url="${project.organization.url}" />
-        <param name="plugin-icon">images/pluginIcon.png</param>
-        <param name="plugin-logo">images/pluginLogo.png</param>
-    </plugin-info>
+	<plugin-info>
+		<description>${project.description}</description>
+		<version>${project.version}</version>
+		<vendor name="${project.organization.name}" url="${project.organization.url}" />
+		<param name="plugin-icon">images/pluginIcon.png</param>
+		<param name="plugin-logo">images/pluginLogo.png</param>
+	</plugin-info>
 
-    <!-- add our i18n resource -->
-    <resource type="i18n" name="i18n" location="terminology"/>
-    
-    <!-- add our web resources -->
-    <web-resource key="terminology-resources" name="terminology Web Resources">
-        <dependency>com.atlassian.auiplugin:ajs</dependency>
-        
-        <resource type="download" name="terminology.css" location="/css/terminology.css"/>
-        <resource type="download" name="terminology.js" location="/js/terminology.js"/>
-        <resource type="download" name="images/" location="/images"/>
+	<!-- add our i18n resource -->
+	<resource type="i18n" name="i18n" location="terminology"/>
 
-        <context>terminology</context>
-    </web-resource>
-    
+	<!-- add our web resources -->
+	<web-resource key="terminology-resources" name="terminology Web Resources">
+		<dependency>com.atlassian.auiplugin:ajs</dependency>
+
+		<resource type="download" name="terminology.css" location="/css/terminology.css"/>
+		<resource type="download" name="terminology.js" location="/js/terminology.js"/>
+		<resource type="download" name="images/" location="/images"/>
+
+		<context>terminology</context>
+	</web-resource>
+
+	<!-- Documentation for element: https://developer.atlassian.com/server/confluence/including-information-in-your-macro-for-the-macro-browser/ -->
+	<xhtml-macro name="term" class="info.hubbitus.macros.TermMacro" key='term-macro'>
+		<description key="hubbitus.term.macro.desc"/>
+		<category name="formatting"/>
+		<parameters>
+			<parameter name="Name"     type="string"             required="true"/>
+			<parameter name="TermPage" type="confluence-content" required="true"/>
+		</parameters>
+	</xhtml-macro>
+
 </atlassian-plugin>
