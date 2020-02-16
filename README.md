@@ -1,3 +1,5 @@
+# confluence-terminology-plugin
+Simple Terminology highlight plugin (macros) for Atlassian confluence
 
 Base [tutorial](https://developer.atlassian.com/server/framework/atlassian-sdk/create-a-confluence-hello-world-macro/)
 
