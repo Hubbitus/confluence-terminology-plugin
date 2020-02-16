@@ -61,7 +61,7 @@ public class TermMacro implements Macro {
 		String pageContent = page.getBodyAsString();
 
 		try {
-			return "<a class='glossary-term' href='" + settingsManager.getGlobalSettings().getBaseUrl() + page.getUrlPath() + "' title='" + GeneralUtil.escapeForHtmlAttribute(xhtmlContent.convertStorageToView(pageContent, conversionContext)) + "'><code>" + name + "</code></a>";
+			return "<a class='glossary-term' href='" + settingsManager.getGlobalSettings().getBaseUrl() + page.getUrlPath() + "' data-tooltip='" + GeneralUtil.escapeForHtmlAttribute(xhtmlContent.convertStorageToView(pageContent, conversionContext)) + "'><code>" + name + "</code></a>";
 		} catch (XMLStreamException | XhtmlException e) {
 			e.printStackTrace();
 		}

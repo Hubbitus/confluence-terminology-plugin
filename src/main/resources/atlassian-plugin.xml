@@ -18,7 +18,10 @@ Documentation about content of this file: https://developer.atlassian.com/server
 		<dependency>com.atlassian.auiplugin:ajs</dependency>
 
 		<resource type="download" name="terminology.css" location="/css/terminology.css"/>
-		<resource type="download" name="terminology.js" location="/js/terminology.js"/>
+		<resource type="download" name="terminology.js"  location="/js/terminology.js"/>
+
+		<resource type="download" name="jquery.qtip.min.css" location="/css/3rdParty/qtip2/3.0.3/jquery.qtip.min.css"/>
+		<resource type="download" name="jquery.qtip.min.js"  location="/js/3rdParty/qtip2/3.0.3/jquery.qtip.min.js"/>
 		<resource type="download" name="images/" location="/images"/>
 
 		<context>terminology</context>
