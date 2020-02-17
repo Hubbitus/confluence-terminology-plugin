@@ -4,13 +4,16 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>info.hubbitus</groupId>
     <artifactId>terminology</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0</version>
     <organization>
-        <name>Example Company</name>
+        <name>Hubbitus (Pavel Alexeev)</name>
         <url>http://hubbitus.info</url>
     </organization>
     <name>terminology</name>
-    <description>This is the info.hubbitus:terminology plugin for Atlassian Confluence.</description>
+    <description>
+        This is the info.hubbitus:terminology plugin for Atlassian Confluence. Simple macros to insert terms into page.
+        See more description and source: https://github.com/Hubbitus/confluence-terminology-plugin
+    </description>
     <packaging>atlassian-plugin</packaging>
     <dependencies>
         <dependency>
