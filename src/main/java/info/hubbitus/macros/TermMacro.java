@@ -56,12 +56,13 @@ public class TermMacro implements Macro {
 		pageBuilderService.assembler().resources().requireWebResource("info.hubbitus.terminology:terminology-resources");
 		String name = map.get("Name");
 		String termPageName = map.get("TermPage");
+		String color = map.get("TooltipColor");
 
 		Page page = pageManager.getPage(conversionContext.getSpaceKey(), termPageName);
 		String pageContent = page.getBodyAsString();
 
 		try {
-			return "<a class='glossary-term' href='" + settingsManager.getGlobalSettings().getBaseUrl() + page.getUrlPath() + "' data-tooltip='" + GeneralUtil.escapeForHtmlAttribute(xhtmlContent.convertStorageToView(pageContent, conversionContext)) + "'><code>" + name + "</code></a>";
+			return "<a class='glossary-term' href='" + settingsManager.getGlobalSettings().getBaseUrl() + page.getUrlPath() + "' data-tooltip='" + GeneralUtil.escapeForHtmlAttribute(xhtmlContent.convertStorageToView(pageContent, conversionContext)) + "' data-tooltip-color=" + color + "><code>" + name + "</code></a>";
 		} catch (XMLStreamException | XhtmlException e) {
 			e.printStackTrace();
 		}

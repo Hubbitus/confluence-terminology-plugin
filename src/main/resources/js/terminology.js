@@ -29,7 +29,7 @@ $(function() {
 				}
 			},
 			style: {
-				classes: 'qtip-green qtip-shadow qtip-rounded'
+				classes: 'qtip-' + this.getAttribute('data-tooltip-color') + ' qtip-shadow qtip-rounded'
 			}
 		});
 	});

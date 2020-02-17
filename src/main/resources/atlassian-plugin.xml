@@ -32,8 +32,16 @@ Documentation about content of this file: https://developer.atlassian.com/server
 		<description key="hubbitus.term.macro.desc"/>
 		<category name="formatting"/>
 		<parameters>
-			<parameter name="Name"     type="string"             required="true"/>
-			<parameter name="TermPage" type="confluence-content" required="true"/>
+			<parameter name="Name"         type="string"             required="true"/>
+			<parameter name="TermPage"     type="confluence-content" required="true"/>
+			<parameter name="TooltipColor" type="enum" required="true">
+				<value name="green" default="true"/>
+				<value name="light"/>
+				<value name="plain"/>
+				<value name="dark"/>
+				<value name="red"/>
+				<value name="blue"/>
+			</parameter>
 		</parameters>
 	</xhtml-macro>
 

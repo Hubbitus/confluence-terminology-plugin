@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>info.hubbitus</groupId>
     <artifactId>terminology</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <organization>
         <name>Hubbitus (Pavel Alexeev)</name>
         <url>http://hubbitus.info</url>
