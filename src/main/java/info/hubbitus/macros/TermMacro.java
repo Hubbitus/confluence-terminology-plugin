@@ -58,7 +58,15 @@ public class TermMacro implements Macro {
 		String termPageName = map.get("TermPage");
 		String color = map.get("TooltipColor");
 
-		Page page = pageManager.getPage(conversionContext.getSpaceKey(), termPageName);
+		// Links to different space separated by ":". F.e.: "TEST:DNS"
+		String spaceKey = conversionContext.getSpaceKey(); // Current by default
+		String[] parts = termPageName.split(":");
+		if (parts.length > 1){
+			spaceKey = parts[0];
+			termPageName = parts[1];
+		}
+
+		Page page = pageManager.getPage(spaceKey, termPageName);
 		String pageContent = page.getBodyAsString();
 
 		try {

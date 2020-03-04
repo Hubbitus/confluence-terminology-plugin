@@ -25,7 +25,7 @@ Full documentation is always available at: <https://developer.atlassian.com/disp
 ## Dev resources
 
 1. Base [tutorial](https://developer.atlassian.com/server/framework/atlassian-sdk/create-a-confluence-hello-world-macro/). Tutorial [source](https://bitbucket.org/serverecosystem/myconfluencemacro/src/master/).
-2. <https://www.k15t.com/blog/2015/03/building-a-glossary-and-checking-terminology-in-confluence> - good problem description, mentioned aforemention Glossary plugin and some other alternatives.
+2. <https://www.k15t.com/blog/2015/03/building-a-glossary-and-checking-terminology-in-confluence> - good problem description, mentioned aforementioned Glossary plugin and some other alternatives.
 3. [Good example how to add self macros into Confluence **without** any plugins](https://thedetaildept.com/2011/08/13/building-a-glossary-in-confluence/). Very interesting and useful. Actually that work was start in that manner. But there several disadvantages:
   * Can't add resources
   * For any term macros included with `JS` and `CSS`
