@@ -8,7 +8,10 @@ $(function() {
 	$('a.glossary-term').each(function() {
 		$(this).qtip({
 			content: {
-				text: this.getAttribute('data-tooltip').replace(/\\"/g, '"'),
+				// @TODO should nested Terms also be opened in popup???
+				text: this.getAttribute('data-tooltip')
+					.replace(/([^⍞]|^)⍞(?!⍞)/g, '$1"') // Hack. Firefox does not support lookbehind: https://bugzilla.mozilla.org/show_bug.cgi?id=1225665 (< https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+						.replace(/⍞⍞/g, '⍞'),
 				button: true
 			},
 			position: {

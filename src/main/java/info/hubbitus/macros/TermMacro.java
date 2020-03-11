@@ -1,18 +1,16 @@
 package info.hubbitus.macros;
 
 import java.util.Map;
-import java.util.Objects;
-
 import javax.xml.stream.XMLStreamException;
 
 import com.atlassian.confluence.content.render.xhtml.ConversionContext;
+import com.atlassian.confluence.content.render.xhtml.DefaultConversionContext;
 import com.atlassian.confluence.content.render.xhtml.XhtmlException;
 import com.atlassian.confluence.macro.Macro;
 import com.atlassian.confluence.macro.MacroExecutionException;
 import com.atlassian.confluence.pages.Page;
 import com.atlassian.confluence.pages.PageManager;
 import com.atlassian.confluence.setup.settings.SettingsManager;
-import com.atlassian.confluence.util.GeneralUtil;
 import com.atlassian.confluence.xhtml.api.XhtmlContent;
 import com.atlassian.plugin.spring.scanner.annotation.component.Scanned;
 import com.atlassian.plugin.spring.scanner.annotation.imports.ComponentImport;
@@ -58,15 +56,31 @@ public class TermMacro implements Macro {
 		String termPageName = map.get("TermPage");
 		String color = map.get("TooltipColor");
 
-		Page page = pageManager.getPage(conversionContext.getSpaceKey(), termPageName);
+		// Links to different space separated by ":". F.e.: "TEST:DNS"
+		String spaceKey = conversionContext.getSpaceKey(); // Current by default
+		String[] parts = termPageName.split(":");
+		if (parts.length > 1){
+			spaceKey = parts[0];
+			termPageName = parts[1];
+		}
+
+		Page page = pageManager.getPage(spaceKey, termPageName);
 		String pageContent = page.getBodyAsString();
 
+		ConversionContext pageContext = new DefaultConversionContext(page.toPageContext(), conversionContext.getOutputDeviceType());
+
 		try {
-			return "<a class='glossary-term' href='" + settingsManager.getGlobalSettings().getBaseUrl() + page.getUrlPath() + "' data-tooltip='" + GeneralUtil.escapeForHtmlAttribute(xhtmlContent.convertStorageToView(pageContent, conversionContext)) + "' data-tooltip-color=" + color + "><code>" + name + "</code></a>";
+			// GeneralUtil.escapeForHtmlAttribute() work incorrect there! It is replace " to \" (JavaScript type), but we need &quot; there!
+			// See https://stackoverflow.com/questions/4015345/how-do-i-properly-escape-quotes-inside-html-attributes/4015380#4015380
+			String tooltipContent = xhtmlContent.convertStorageToView(pageContent, pageContext)
+				.replaceAll("⍞", "⍞⍞") // Allow nesting (see terminology.js corresponded part)
+					.replaceAll("\"", "⍞");
+
+			return "<a class='glossary-term' href=\"" + settingsManager.getGlobalSettings().getBaseUrl() + page.getUrlPath() + "\" data-tooltip=\"" + tooltipContent + "\" data-tooltip-color='" + color + "'><code>" + name + "</code></a>";
 		} catch (XMLStreamException | XhtmlException e) {
 			e.printStackTrace();
+			return "Error render macro Term: " + e.getMessage();
 		}
-		return "Error render macro Term";
 	}
 
 	@Override
