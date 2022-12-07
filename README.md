@@ -8,6 +8,9 @@ In search of opensource glossary plugin I've found: [Glossary](https://marketpla
 > **I've post [future request](https://bitbucket.org/keysight/keysight-plugins-for-atlassian-products/issues/70/fr-please-highlight-all-terms-on-page-and) but it has been closed as **`WANTFIX`**.
 It was the main reason I start such development after do not found free replacement.**
 
+![Term macros editing screenshot](imgs/1-term-macros-edit.png)
+![Term macros in action](imgs/2-term-macros-in-action.png )
+
 # Development
 
 Here are the SDK base commands you'll use immediately:
