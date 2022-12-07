@@ -10,9 +10,7 @@ It was the main reason I start such development after do not found free replacem
 
 # Development
 
-You have successfully created an Atlassian Plugin!
-
-Here are the SDK commands you'll use immediately:
+Here are the SDK base commands you'll use immediately:
 
 * atlas-run   -- installs this plugin into the product and starts it on localhost
 * atlas-debug -- same as atlas-run, but allows a debugger to attach at port 5005
@@ -27,6 +25,6 @@ Full documentation is always available at: <https://developer.atlassian.com/disp
 1. Base [tutorial](https://developer.atlassian.com/server/framework/atlassian-sdk/create-a-confluence-hello-world-macro/). Tutorial [source](https://bitbucket.org/serverecosystem/myconfluencemacro/src/master/).
 2. <https://www.k15t.com/blog/2015/03/building-a-glossary-and-checking-terminology-in-confluence> - good problem description, mentioned aforementioned Glossary plugin and some other alternatives.
 3. [Good example how to add self macros into Confluence **without** any plugins](https://thedetaildept.com/2011/08/13/building-a-glossary-in-confluence/). Very interesting and useful. Actually that work was start in that manner. But there several disadvantages:
-  * Can't add resources
-  * For any term macros included with `JS` and `CSS`
-  * Very hard to debug `Velocity` template...
+   * Can't add resources
+   * For any term macros included with `JS` and `CSS`
+   * Very hard to debug `Velocity` template...
