@@ -1,9 +1,9 @@
 # confluence-terminology-plugin
 Simple Terminology highlight plugin (macros) for Atlassian confluence
 
-There are many paid plugins for confluence to manage `Terminology` or `Glossary`. Fore example [Smart Terms for Confluence - Glossary](https://marketplace.atlassian.com/apps/1219677/smart-terms-for-confluence-glossary?hosting=server&tab=overview) or [Glossary - Terminology Manager](https://marketplace.atlassian.com/apps/1219513/glossary-terminology-manager?hosting=server&tab=overview) you may buy it if it fit to your needs. Meantime it was not our case unfortunately. And proprietary code do not give you possibility change it as you want.
+There are many paid plugins for confluence to manage `Terminology` or `Glossary`. Fore example, [Smart Terms for Confluence - Glossary](https://marketplace.atlassian.com/apps/1219677/smart-terms-for-confluence-glossary?hosting=server&tab=overview) or [Glossary - Terminology Manager](https://marketplace.atlassian.com/apps/1219513/glossary-terminology-manager?hosting=server&tab=overview) you may buy it if it fit to your needs. Meantime it was not our case unfortunately. And proprietary code do not give you possibility change it as you want.
 
-In search of opensource glossary plugin I've found: [Glossary](https://marketplace.atlassian.com/apps/1217138/glossary?hosting=server&tab=overview). Basically that fine adn I highly recommend that plugin (and even their templates should be helpful with my macros). But that lack major functionality for me: it maintain terms pages, but do **not highlight terms on pages**.
+In search of opensource glossary plugin I've found: [Glossary](https://marketplace.atlassian.com/apps/1217138/glossary?hosting=server&tab=overview). Basically that fine and I highly recommend that plugin (and even their templates should be helpful with my macros). But that lack major functionality for me: it maintain terms pages, but do **not highlight terms on pages**.
 
 > **I've post [future request](https://bitbucket.org/keysight/keysight-plugins-for-atlassian-products/issues/70/fr-please-highlight-all-terms-on-page-and) but it has been closed as **`WANTFIX`**.
 It was the main reason I start such development after do not found free replacement.**
